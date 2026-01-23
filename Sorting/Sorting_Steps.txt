@@ -1,0 +1,39 @@
+SORTING ALGORITHMS: STEP-BY-STEP GUIDE
+
+=== SELECTION SORT ===
+
+Step 1: Iterate through the unsorted portion to find the minimum element.
+Step 2: Store the index of this minimum element.
+Step 3: Outside the loop, use the stored index to swap the minimum element with the first element of the unsorted portion.
+
+=== BUBBLE SORT ===
+
+Step 1: Start a pass through the array.
+Step 2: Iterate through the array comparing adjacent elements.
+Step 3: If the current element is greater than the next element, swap them.
+Step 4: Repeat this until the largest element bubbles up to the correct position at the end.
+Step 5: (Optional) If no swaps occurred in a pass, the array is already sorted, so stop.
+
+=== INSERTION SORT ===
+
+Step 1: Assume the first element is already sorted.
+Step 2: Pick the next element and store it as the "key" to be inserted.
+Step 3: Compare the key with elements in the sorted portion (moving backwards).
+Step 4: Shift elements that are greater than the key to the right.
+Step 5: Insert the key into its correct sorted position.
+
+=== MERGE SORT ===
+
+Step 1: Divide: Find the middle point to divide the array into two halves.
+Step 2: Recurse: Recursively call the sort function for the left half and the right half.
+Step 3: Base Case: Stop if the array has only one element.
+Step 4: Merge: Create temporary storage for both halves.
+Step 5: Compare elements from the two halves, place the smaller one into the original array, and copy any remaining elements.
+
+=== QUICK SORT ===
+
+Step 1: Pivot: Choose a pivot element from the array (e.g., the last element).
+Step 2: Partition: Iterate through the array and compare elements with the pivot.
+Step 3: Move elements smaller than the pivot to one side (by swapping) and keep larger elements on the other.
+Step 4: Place the pivot in its correct sorted position between the smaller and larger elements.
+Step 5: Recurse: Apply the same steps to the left sub-array and the right sub-array.
