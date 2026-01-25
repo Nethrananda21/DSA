@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-    void selectionSort(vector<int>& arr) {
+    void SelectionSort(vector<int>& arr) {
         int n = arr.size();
         
         for(int i=0;i<n-1;i++){
