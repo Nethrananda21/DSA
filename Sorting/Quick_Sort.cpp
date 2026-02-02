@@ -1,33 +1,29 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-// Function to partition the array on the basis of pivot element
 int partition(vector<int>& arr, int low, int high) {
     int pivot = arr[high];
-    int i = low-1;
-    int j = low;
+    int i = low - 1;
 
-    while(j<high){
-        if(arr[j]<pivot){
+    for (int j = low; j < high; j++) {
+        if (arr[j] < pivot) {
             i++;
-            swap(arr[j], arr[i]);
+            swap(arr[i], arr[j]);
         }
-        j++;
     }
-
-    swap(arr[i+1], arr[high]);
-    return (i+1);
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
 }
 
+void quickSort(vector<int>& arr, int start, int end) {
+    if (start < end) {
+        int pi = partition(arr, start, end);
 
-void quickSort(vector<int>& arr, int low, int high) {
-    if(low<high){
-        int x = partition(arr, low, high);
-
-        quickSort(arr, low, x-1);
-        quickSort(arr, x+1, high);
+        quickSort(arr, start, pi - 1);
+        quickSort(arr, pi + 1, end);
     }
 }
 
