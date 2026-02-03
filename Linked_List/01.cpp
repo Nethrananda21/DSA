@@ -11,10 +11,20 @@ public:
     }
 };
 
+Node *DeleteAtEnd(Node *head){
+    Node *temp=head;
+    while(temp->next->next!=NULL){
+        temp=temp->next;
+    }
+    delete(temp->next);
+    temp->next=NULL;
+    
+}
+
 Node* InsertAtBeginning(Node* head, int val) {//normal insertion 1,2,3,4,5 would be 5,4,3,2,1
     Node* node = new Node(val);
     node->next = head;
-    return node;
+    return node;//we are updating the head to new node which is recently inialized
 }
 
 Node* InsertAtEnd(Node* head, int val) {
