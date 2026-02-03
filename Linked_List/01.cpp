@@ -11,7 +11,7 @@ public:
     }
 };
 
-Node* InsertAtBeginning(Node* head, int val) {//normal insertion
+Node* InsertAtBeginning(Node* head, int val) {//normal insertion 1,2,3,4,5 would be 5,4,3,2,1
     Node* node = new Node(val);
     node->next = head;
     return node;
@@ -61,7 +61,7 @@ int main() {
     Node* head = nullptr;
     int data;
     while (cin >> data) {
-        head = InsertAtEnd(head, data);
+        head = InsertAtBeginning(head, data);
     }
     Print(head);
     return 0;
