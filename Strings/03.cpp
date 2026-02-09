@@ -12,7 +12,6 @@ public:
        for(char i : s){
         arr[i - 'a']++;
        }
-
        for(char i : t){
         arr[i - 'a']--;
         if(arr[i - 'a'] < 0) return false; 
