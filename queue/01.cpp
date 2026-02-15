@@ -42,6 +42,21 @@ class Queue{
 
 };
 
-int main(){
-    
+int main() {
+    Queue q(5);
+
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+
+    cout << "Front element: " << q.getFront() << endl;
+
+    q.dequeue();
+    cout << "Front element after dequeue: " << q.getFront() << endl;
+
+    q.dequeue();
+    q.dequeue();
+    q.dequeue(); // This will trigger underflow
+
+    return 0;
 }
