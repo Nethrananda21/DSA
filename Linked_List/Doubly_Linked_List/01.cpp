@@ -45,6 +45,18 @@ void insertatposi(Node* &head, int val, int posi){
     temp->next=node;
     node->prev=temp;
 }
-int main(){
+int main() {
+    Node* head = NULL;
+    insertAtTail(head, 1);
+    insertAtTail(head, 2);
+    insertAtTail(head, 3);
+    insertAtHead(head, 0);
+    insertatposi(head, 10, 3);
 
+    Node* temp = head;
+    while (temp != NULL) {
+        std::cout << temp->data << " ";
+        temp = temp->next;
+    }
+    return 0;
 }
