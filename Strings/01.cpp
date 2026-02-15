@@ -1,3 +1,4 @@
+```cpp
 #include<iostream>
 #include<string>
 #include<stack>
@@ -5,25 +6,24 @@ using namespace std;
 
 int main()
 {
-    // // char arr[5] = {'h', 'e','l', 'l', 'o'};
-    // // string str = "There are " + to_string(30+50) + " students in class";
+    string str = "sky is blue";
+    stack<string> s;
+    string temp = "";
 
-    // string s1 = "Hello";
-    // string s2 = "hello";
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == ' ') {
+            s.push(temp);
+            temp = "";
+        } else {
+            temp += str[i];
+        }
+    }
+    s.push(temp);
 
-    // // if(s1 == s2){
-    // //     cout << "Strings are same";
-    // // }
-    // // else cout << "Strings are not same";
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
 
-    // int x = s1.compare(s2);
-    // if(x==0) cout << "Same"; else cout << "different";
-   
-
-    string str="sky is blue";
-
-    stack<int>s;
-
-    for()
-    
+    return 0;
 }
