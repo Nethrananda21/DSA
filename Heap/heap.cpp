@@ -17,26 +17,24 @@ class MaxHeap{
                 }
             }
         }
-        void BubbleDown(){
-            int i=0, size=heap.size();
-            while(i<size){
-                int left=2*i+1;
-                int right=2*i+2; 
-                int largest=i;
-                if(left<size && heap[left]>heap[largest]) largest=left;
-                if(right<size && heap[right]>heap[largest]) largest=right;
-                if(largest!=i){
-                    swap(heap[largest], heap[i]);
-                    i=largest;
-                }
-                else break;  
-            }
+        void heapify(vector<int>v, int n, int i){
+            int size=heap.size();
+            int largest=i;
+            int left=2*i+1;
+            int right=2*i+2; 
             
-
+            if(left<size && heap[left]>heap[largest]) largest=left;
+            if(right<size && heap[right]>heap[largest]) largest=right;
+            
+            if(largest!=i){
+                swap(heap[largest], heap[i]);
+                heapify(arr,n,largest);
+            }
         }
         void insert(int value){
             heap.push_back(value);
             BubbleUp(heap.size()-1);
-            
+            for (int i = n / 2 - 1; i >= 0; i--)
+                heapify(arr, n, i);
         }
 }
